@@ -1,0 +1,91 @@
+# password = hello
+import time
+list_of_book = ["python","C","C++","java","html","bootstrap"]
+get_books = []
+print("Hello! welcome E-Library")
+enter_name = input("enter user name who request\n")
+your_name = enter_name
+class Library:
+
+    def __init__(self):
+        self.user = user
+
+    @staticmethod
+    def display_books():
+        for all_books in list_of_book:
+            print(f"{all_books}")
+
+    @staticmethod
+    def lend_book():
+        user = input("enter book name \n")
+        print("plese wait...")
+        time.sleep(3)
+        if user not in list_of_book:
+            print(f"{your_name} has already lend {user}. ")
+        elif user in list_of_book:
+            list_of_book.remove(user)
+            get_books.append(user)
+            print(f"You have successfully lend {user}")
+
+    @staticmethod
+    def donate():
+        user_donate = input("Enter the book you want to donate: ")
+        print("plese wait...")
+        time.sleep(3)
+        if user_donate not in list_of_book:
+            list_of_book.append(user_donate)
+            print(f"Thank you for donate {user_donate}")
+        else:
+            print(f"oh NO! sorry We have already a {user_donate} We can't accept it.")
+
+    @staticmethod
+    def return_book():
+        user_return_book = input("Please enter the name of the book you have to return: ")
+        print("plese wait...")
+        time.sleep(3)
+        if user_return_book in get_books:
+            get_books.remove(user_return_book)
+            list_of_book.append(user_return_book)
+            print(f"Thank you ! {user_return_book} successfully return")
+        elif user_return_book in list_of_book:
+            print(f"You haven't lend the {user_return_book} ")
+
+def admin_on():
+    print(" '1' -  to Display books \n '2' - to Lend books \n '3' - to Add books \n '4' - to Return books \n '5' - logout")
+    user = Library
+    while 1:
+        req = input("enter your request \n")
+        if req == "1":
+            user.display_books()
+        elif req == "2":
+            user.lend_book()
+        elif req == "3":
+            user.donate()
+        elif req == "4":
+            user.return_book()
+        elif req == "5":
+            break
+        else:
+            print("Invalid Input...")
+
+def user_on():
+    user = Library
+    user.display_books()
+
+while 1:
+    who_r_u = input("1 = admin & 2 = user & 3 = close\n")
+    if who_r_u == "1":
+        print("hello admin pls enter your password \n password at first line in code")
+        var_pass = input()
+        if var_pass == "hello":
+            admin_on()
+        else:
+            print("enter valid")
+    elif who_r_u == "2":
+        print("hello user you can only show all books ! \n wait book loading")
+        time.sleep(5)
+        user_on()
+    elif who_r_u == "3":
+        break
+    else:
+        print("enter valid")
