@@ -20,12 +20,14 @@ class Library:
         user = input("enter book name \n")
         print("plese wait...")
         time.sleep(3)
-        if user not in list_of_book:
+        if user in get_books:
             print(f"{your_name} has already lend {user}. ")
         elif user in list_of_book:
             list_of_book.remove(user)
             get_books.append(user)
             print(f"You have successfully lend {user}")
+        else:
+            print("oh no! book is not available")
 
     @staticmethod
     def donate():
@@ -34,7 +36,7 @@ class Library:
         time.sleep(3)
         if user_donate not in list_of_book:
             list_of_book.append(user_donate)
-            print(f"Thank you for donate {user_donate}")
+            print(f"Thank you for donjYate {user_donate}")
         else:
             print(f"oh NO! sorry We have already a {user_donate} We can't accept it.")
 
