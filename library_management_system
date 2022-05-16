@@ -36,7 +36,7 @@ class Library:
         time.sleep(3)
         if user_donate not in list_of_book:
             list_of_book.append(user_donate)
-            print(f"Thank you for donjYate {user_donate}")
+            print(f"Thank you for donate {user_donate}")
         else:
             print(f"oh NO! sorry We have already a {user_donate} We can't accept it.")
 
